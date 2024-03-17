@@ -5,7 +5,7 @@
 void
 example_init (void)
 {
-  void* p = malloc(1024);
+  volatile void* p = malloc(1024);
   hs_init (NULL, NULL);
 }
 
