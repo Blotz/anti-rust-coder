@@ -2,6 +2,7 @@ use pyo3::prelude::*;
 use pyo3::types::IntoPyDict;
 
 fn main() -> PyResult<()> {
+    unsafe {
     pyo3::prepare_freethreaded_python();
         Python::with_gil(|py| {
             let fun: Py<PyAny> = PyModule::from_code(
@@ -27,4 +28,5 @@ def example(*args, **kwargs):
     
         Ok(())
     })
+    }
 }
